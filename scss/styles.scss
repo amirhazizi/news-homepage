@@ -1,69 +1,31 @@
 // configs
 @import "./utils/config";
+// navbar component
+@import "./components/nav";
+// sidebar component
+@import "./components/sidebr";
+// articles component
+@import "./components/articles";
 // footer component
 @import "./components/footer";
+// public class
 .section {
   min-width: 355px;
   margin: 0 auto;
   max-width: 1300px;
   padding: 0 1rem;
 }
+// nav
 .nav {
   padding: 2.5rem 1rem;
   padding-bottom: 2rem;
-  display: grid;
-  justify-content: space-between;
-  grid-template-columns: auto auto;
-  align-items: center;
-  &-logo {
-    height: 2rem;
-  }
-  &-links-container {
-    display: none;
-  }
-}
-// sidebar
-.sidebar {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.249);
-  background: transparent;
-  .sidebar-container {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 1.5rem 1rem;
-    background: $cl_offwhite;
-    height: 100vh;
-    width: 55vw;
-    transform: translateX(100%);
-    &-closebtn {
-      margin-left: auto;
-      margin-right: 0.5rem;
-    }
-    &-links {
-      padding: 1rem 0.5rem;
-      margin-top: 3rem;
-      li {
-        padding: 0.7rem 0;
-        a {
-          font-weight: $weight_2;
-          color: $cl_verydarkblue;
-        }
-      }
-    }
-  }
 }
 // header
 .header {
-  &-header-mobile {
+  &-mobile {
     width: 100%;
   }
-  &-header-desktop {
+  &-desktop {
     display: none;
     width: 100%;
   }
@@ -85,8 +47,13 @@
         text-transform: uppercase;
         letter-spacing: 0.3rem;
         font-weight: $weight_2;
-        padding: 1rem 1.5rem;
+        padding: 1rem 2.2rem;
         margin: 1.8rem 0;
+        transition: $transition;
+        cursor: pointer;
+        &:hover {
+          background: $cl_verydarkblue;
+        }
       }
     }
   }
@@ -98,13 +65,17 @@
     h1 {
       color: $cl_softorange;
       margin-bottom: 0.5rem;
-      // font-size: 3rem;
     }
     div {
       padding: 2rem 0;
       border-bottom: 1px solid $cl_darkgrayishblue;
       h2 {
         font-size: 1.4rem;
+        transition: $transition;
+        cursor: pointer;
+        &:hover {
+          color: $cl_softorange;
+        }
       }
       p {
         color: $cl_grayishblue;
@@ -117,139 +88,9 @@
     }
   }
 }
-// articles
 .articles {
   margin-top: 4rem;
   margin-bottom: 6rem;
-  display: flex;
-  flex-direction: column;
-  // align-items: center;
-  justify-items: center;
-  gap: 3rem;
-  // background: gold;
-  article {
-    display: flex;
-    align-items: center;
-    gap: 0 1.5rem;
-    img {
-      height: 10rem;
-      object-fit: cover;
-    }
-    div {
-      flex: 0 0 60%;
-      display: grid;
-      grid-template-rows: repeat(3, 1fr);
-      h1 {
-        font-size: 2rem;
-        color: $cl_grayishblue;
-      }
-      h2 {
-        font-size: 1.2rem;
-        align-self: center;
-        font-weight: $weight_3;
-      }
-      p {
-        line-height: 1.5;
-        color: $cl_darkgrayishblue;
-      }
-    }
-  }
 }
-@media (min-width: 768px) {
-  .nav {
-    padding: 4rem 1rem;
-    &-logo {
-      height: 3rem;
-    }
-    &-links-container {
-      display: block;
-      .nav-links {
-        display: flex;
-        font-size: 1.2rem;
-        font-weight: $weight_1;
-        gap: 2rem;
-      }
-    }
-    &-closebtn {
-      display: none;
-    }
-  }
-  .articles {
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    article {
-      width: calc(50% - 3rem);
-    }
-  }
-}
-@media (min-width: 976px) {
-  .header {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    &-header {
-      &-mobile {
-        display: none;
-      }
-      &-desktop {
-        display: block;
-      }
-    }
-    &-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 1rem 0;
-      &-header {
-        font-size: 4rem;
-      }
-      &-desc {
-        display: grid;
-        padding: 1.5rem 0;
-        height: 100%;
-        align-content: space-between;
-        justify-items: start;
-        &-text {
-          font-size: 1.2rem;
-        }
-        &-btn {
-          margin: 0;
-        }
-      }
-    }
-    &-news {
-      padding: 2rem;
-      margin-top: 0rem;
-      height: 100%;
-      h1 {
-        font-size: 3rem;
-      }
-      div {
-        padding: 2rem 0;
-        line-height: 2;
-        h2 {
-          font-size: 1.6rem;
-        }
-        p {
-          padding: 0rem;
-          font-size: 1.2rem;
-          opacity: 0.8;
-        }
-      }
-      .new-1 {
-        padding-top: 1rem;
-      }
-      .new-3 {
-        border-bottom: 0;
-        padding-bottom: 0;
-      }
-    }
-  }
-  .articles {
-    margin-top: 5rem;
-    article {
-      width: calc(33.33% - 3rem);
-    }
-  }
-}
+// media queris
+@import "./utils/desktop";

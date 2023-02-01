@@ -1,0 +1,23 @@
+// navbar
+.nav {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+  align-items: center;
+  &-logo {
+    height: 2rem;
+  }
+  &-links-container {
+    display: none;
+    .nav-links {
+      a {
+        color: $cl_verydarkblue;
+        transition: $transition;
+        cursor: pointer;
+        &:hover {
+          color: $cl_softorange;
+        }
+      }
+    }
+  }
+}
