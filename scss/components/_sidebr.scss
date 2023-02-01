@@ -6,8 +6,7 @@
   z-index: -1;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.249);
-  background: transparent;
+  transition: $transition;
   .sidebar-container {
     position: fixed;
     top: 0;
@@ -32,5 +31,12 @@
         }
       }
     }
+  }
+}
+.active-sidebar {
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.601);
+  .sidebar-container {
+    transform: translateX(0);
   }
 }

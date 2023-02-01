@@ -61,8 +61,7 @@ html {
   z-index: -1;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.249);
-  background: transparent;
+  transition: all 200ms linear;
 }
 .sidebar .sidebar-container {
   position: fixed;
@@ -88,6 +87,14 @@ html {
 .sidebar .sidebar-container-links li a {
   font-weight: 700;
   color: hsl(240deg, 100%, 5%);
+}
+
+.active-sidebar {
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.601);
+}
+.active-sidebar .sidebar-container {
+  transform: translateX(0);
 }
 
 .articles {
@@ -243,7 +250,7 @@ footer {
     font-weight: 400;
     gap: 2rem;
   }
-  .nav-closebtn {
+  .nav-menubtn {
     display: none;
   }
   .header {
