@@ -3,25 +3,23 @@
 // footer component
 @import "./components/footer";
 .section {
-  width: 355px;
+  min-width: 355px;
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1300px;
+  padding: 0 1rem;
 }
 .nav {
-  padding: 1rem 0;
+  padding: 2.5rem 1rem;
+  padding-bottom: 2rem;
   display: grid;
   justify-content: space-between;
   grid-template-columns: auto auto;
   align-items: center;
   &-logo {
-    height: 1.7rem;
+    height: 2rem;
   }
   &-links-container {
     display: none;
-  }
-  &-closebtn {
-    // justify-self: end;
-    // margin-left: auto;
   }
 }
 // sidebar
@@ -60,32 +58,35 @@
     }
   }
 }
+// header
 .header {
-  &-left {
+  &-header-mobile {
+    width: 100%;
+  }
+  &-header-desktop {
+    display: none;
+    width: 100%;
+  }
+  &-content {
     &-header {
-      width: 100%;
+      font-size: 3rem;
+      line-height: 1;
+      padding: 1.5rem 0;
+      font-weight: $weight_3;
     }
-    &-content {
-      &-header {
-        font-size: 3rem;
-        line-height: 1;
-        padding: 1.5rem 0;
-        font-weight: $weight_3;
+    &-desc {
+      &-text {
+        color: $cl_darkgrayishblue;
+        line-height: 1.5;
       }
-      &-desc {
-        &-text {
-          color: $cl_darkgrayishblue;
-          line-height: 1.5;
-        }
-        &-btn {
-          background: $cl_softred;
-          color: white;
-          text-transform: uppercase;
-          letter-spacing: 0.3rem;
-          font-weight: $weight_2;
-          padding: 1rem 1.5rem;
-          margin: 1.8rem 0;
-        }
+      &-btn {
+        background: $cl_softred;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        font-weight: $weight_2;
+        padding: 1rem 1.5rem;
+        margin: 1.8rem 0;
       }
     }
   }
@@ -93,9 +94,11 @@
     background-color: $cl_verydarkblue;
     color: $cl-offwhite;
     padding: 1.5rem 1rem;
+    margin-top: 3rem;
     h1 {
       color: $cl_softorange;
       margin-bottom: 0.5rem;
+      // font-size: 3rem;
     }
     div {
       padding: 2rem 0;
@@ -120,7 +123,9 @@
   margin-bottom: 6rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  // align-items: center;
+  justify-items: center;
+  gap: 3rem;
   // background: gold;
   article {
     display: flex;
@@ -132,19 +137,119 @@
     }
     div {
       flex: 0 0 60%;
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
       h1 {
         font-size: 2rem;
         color: $cl_grayishblue;
       }
       h2 {
         font-size: 1.2rem;
-        margin: 0.8rem 0;
+        align-self: center;
         font-weight: $weight_3;
       }
       p {
         line-height: 1.5;
         color: $cl_darkgrayishblue;
       }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .nav {
+    padding: 4rem 1rem;
+    &-logo {
+      height: 3rem;
+    }
+    &-links-container {
+      display: block;
+      .nav-links {
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: $weight_1;
+        gap: 2rem;
+      }
+    }
+    &-closebtn {
+      display: none;
+    }
+  }
+  .articles {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    article {
+      width: calc(50% - 3rem);
+    }
+  }
+}
+@media (min-width: 976px) {
+  .header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    &-header {
+      &-mobile {
+        display: none;
+      }
+      &-desktop {
+        display: block;
+      }
+    }
+    &-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 1rem 0;
+      &-header {
+        font-size: 4rem;
+      }
+      &-desc {
+        display: grid;
+        padding: 1.5rem 0;
+        height: 100%;
+        align-content: space-between;
+        justify-items: start;
+        &-text {
+          font-size: 1.2rem;
+        }
+        &-btn {
+          margin: 0;
+        }
+      }
+    }
+    &-news {
+      padding: 2rem;
+      margin-top: 0rem;
+      height: 100%;
+      h1 {
+        font-size: 3rem;
+      }
+      div {
+        padding: 2rem 0;
+        line-height: 2;
+        h2 {
+          font-size: 1.6rem;
+        }
+        p {
+          padding: 0rem;
+          font-size: 1.2rem;
+          opacity: 0.8;
+        }
+      }
+      .new-1 {
+        padding-top: 1rem;
+      }
+      .new-3 {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+  .articles {
+    margin-top: 5rem;
+    article {
+      width: calc(33.33% - 3rem);
     }
   }
 }
