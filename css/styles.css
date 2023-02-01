@@ -51,8 +51,14 @@ footer {
   color: hsl(228deg, 45%, 44%);
 }
 
+.section {
+  width: 355px;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
 .nav {
-  padding: 1rem;
+  padding: 1rem 0;
   display: grid;
   justify-content: space-between;
   grid-template-columns: auto auto;
@@ -64,7 +70,6 @@ footer {
 .nav-links-container {
   display: none;
 }
-
 .sidebar {
   position: fixed;
   width: 100%;
@@ -101,12 +106,6 @@ footer {
   color: hsl(240deg, 100%, 5%);
 }
 
-.section {
-  width: 92vw;
-  margin: 0 auto;
-  max-width: 1440px;
-}
-
 .header-left-header {
   width: 100%;
 }
@@ -128,4 +127,62 @@ footer {
   font-weight: 700;
   padding: 1rem 1.5rem;
   margin: 1.8rem 0;
+}
+.header-news {
+  background-color: hsl(240deg, 100%, 5%);
+  color: hsl(36deg, 100%, 99%);
+  padding: 1.5rem 1rem;
+}
+.header-news h1 {
+  color: hsl(35deg, 77%, 62%);
+  margin-bottom: 0.5rem;
+}
+.header-news div {
+  padding: 2rem 0;
+  border-bottom: 1px solid hsl(236deg, 13%, 42%);
+}
+.header-news div h2 {
+  font-size: 1.4rem;
+}
+.header-news div p {
+  color: hsl(233deg, 8%, 79%);
+  padding: 1rem 0 0.5rem 0;
+}
+.header-news .new-3 {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.articles {
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.articles article {
+  display: flex;
+  align-items: center;
+  gap: 0 1.5rem;
+}
+.articles article img {
+  height: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.articles article div {
+  flex: 0 0 60%;
+}
+.articles article div h1 {
+  font-size: 2rem;
+  color: hsl(233deg, 8%, 79%);
+}
+.articles article div h2 {
+  font-size: 1.2rem;
+  margin: 0.8rem 0;
+  font-weight: 800;
+}
+.articles article div p {
+  line-height: 1.5;
+  color: hsl(236deg, 13%, 42%);
 }
